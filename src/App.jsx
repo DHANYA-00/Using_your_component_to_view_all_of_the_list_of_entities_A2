@@ -2,6 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import PostCard from './components/postcard'
 
 function App() {
 
@@ -31,7 +32,9 @@ function App() {
 
   return (
     <>
-      
+      {initialPosts.map((item)=>(
+        <PostCard key={item.id} profileImage={item.profileImage} username={item.username} content={item.content}  isLiked={item.isLiked}/>
+      ))}
     </>
   )
 }

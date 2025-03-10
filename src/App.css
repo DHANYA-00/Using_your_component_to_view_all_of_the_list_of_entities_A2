@@ -1,42 +1,84 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* General Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to right, #ece9e6, #ffffff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Post Container */
+.post-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  padding: 25px;
+  width: 400px;
+  margin: 20px auto;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.post-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
 }
 
-.card {
-  padding: 2em;
+/* Profile Section */
+/* .post-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+} */
+
+.post-card img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #ddd;
+  transition: transform 0.3s ease;
 }
 
-.read-the-docs {
-  color: #888;
+.post-card:hover img {
+  transform: scale(1.1);
+}
+
+/* Username */
+.post-card h2 {
+  font-size: 20px;
+  color: #222;
+  margin: 0;
+  font-weight: bold;
+}
+
+/* Post Content */
+.post-card p {
+  font-size: 16px;
+  color: #444;
+  margin: 10px 0;
+  line-height: 1.6;
+  letter-spacing: 0.5px;
+}
+
+/* Like Button */
+.like-button {
+  background: transparent;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+  align-self: flex-start;
+}
+
+.like-button:hover {
+  transform: scale(1.2);
+  color: #e63946;
 }
